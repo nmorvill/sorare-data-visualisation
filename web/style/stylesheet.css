@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root {
+    --blue: #4682A9
+}
+
+body {
+    font-family: 'Inter', sans-serif
+}
+
+ul {
+    list-style-type: none;
+}
+
+.htmx-indicator {
+    width: 16px;
+    height: 16px;
+}
+
+.main {
+    max-width: 860px;
+    margin: auto;
+    background-color: #F5F5F5;
+    position: relative;
+}
+
+.search-results {
+    position: absolute;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.player-page>.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.player-page>.header>.infos {
+    display: flex;
+    align-items: center;
+}
+
+.player-page>.header>.infos>.img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 1px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.player-page>.header>.infos>.img>img {
+    max-width: 128px;
+    max-height: 128px;
+}
+
+.player-page>.header>.infos>.text h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: black;
+}
+
+.player-page>.header>.infos>.text {
+    font-size: 0.85em;
+    margin-left: 25px;
+}
+
+.player-page>.header>.infos>.text li {
+    color: #828282;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.player-page>.header>.infos>.text .country {
+    text-transform: uppercase;
+}
+
+.player-page>.header>.infos>.text img {
+    max-height: 25px;
+    max-width: 25px;
+    margin-right: 10px;
+}
+
+.player-page>.header>.main-stats {
+    display: flex;
+}
+
+.player-page>.header>.main-stats>.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px
+}
+
+.player-page>.header>.main-stats>.stat>.score {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.player-page>.header>.main-stats>.stat>.presence {
+    color: #828282
+}
+
+.player-page>.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.player-page>.grid>.column>.container {
+    background-color: white;
+    margin: 15px;
+    border: 1px solid #828282;
+    padding: 5px 15px;
+}
+
+.player-page>.grid>.column>.container>.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.player-page>.grid>.column>.container>.tags>.tag {
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 50px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75em;
+}
+
+.player-page>.grid>.column>.container>.games>.game {
+    display: grid;
+    grid-template-columns: 1fr 2fr 5fr;
+    background-color: #F5F5F5;
+    margin-top: 15px;
+    position: relative;
+}
+
+
+.player-page>.grid>.column>.container>.games>.game>div {
+    margin: 15px 15px;
+}
+
+.player-page>.grid>.column>.container>.games>.game>.gameweek {
+    position: absolute;
+    right: 0;
+    margin: 5px 5px;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #828282
+}
+
+.player-page>.grid>.column>.container>.games>.game>.score {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+}
+
+.player-page>.grid>.column>.container>.games>.game>.result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    column-gap: 5px;
+}
+
+.player-page>.grid>.column>.container>.games>.game>.result img {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.player-page>.grid>.column>.container>.games>.game>.categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.player-page>.grid>.column>.container>.games>.game>.categories>.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.player-page>.grid>.column>.container>.games>.game>.categories>.category>.name {
+    font-size: 0.75em;
+}
+
+.player-page>.grid>.column>.container>.games>.game>.categories>.category>.score {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: 0.75em;
+}

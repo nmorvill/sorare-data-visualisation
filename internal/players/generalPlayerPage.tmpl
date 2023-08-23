@@ -1,0 +1,109 @@
+<div class="player-page">
+    <div class="header">
+        {{ template "infos" .Infos}}
+        {{ template "mainStats" .MainStats}}
+    </div>
+    <div class="grid">
+        <div class="column">
+            <div class="container">
+                {{ template "tags" .Tags }}
+            </div>    
+            <div class="container">
+                {{ template "games" .Games}}
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ define "infos" }}
+    <div class="infos">
+        <div class="img">
+            <img src="{{ .Picture }}"/>
+        </div>
+        <div class="text">
+            <ul>
+                <li><h1>{{ .Name }}</h1><li>
+                <li>{{ .Position }} - {{ .Age }} yo</li>
+                <li class="country"><img src="{{ .CountryPicture }}"/> {{ .CountryName }}</li>
+                <li><img src="{{ .ClubPicture }}"/> {{ .ClubName }}</li>
+            </ul>
+        </div>
+    </div>
+{{ end }}
+
+
+{{ define "mainStats" }}
+    <div class="main-stats">
+        <div class="stat">
+            <div>L5</div>
+            <div class="score" style="background-color:{{ .L5Color }}">{{ .L5Avg }}</div>
+            <div class="presence">{{ .L5Presence }}% played</div>
+        </div>
+        <div class="stat">
+            <div>L15</div>
+            <div class="score" style="background-color:{{ .L15Color }}">{{ .L15Avg }}</div>
+            <div class="presence">{{ .L15Presence }}% played</div>
+        </div>
+        <div class="stat">
+            <div>L50</div>
+            <div class="score" style="background-color:{{ .L50Color }}">{{ .L50Avg }}</div>
+            <div class="presence">{{ .L50Presence }}% played</div>
+        </div>
+    </div>
+{{ end }}
+
+
+{{ define "tags" }}
+    <div class="tags">
+        {{ range . }}
+            <div class="tag" style="background-color:{{ .Color }}">{{ .Title }}</div>
+        {{ end }}
+    </div>
+{{ end }}
+
+{{ define "games" }}
+    <div class="games">
+        {{ range . }}
+            {{ if .Played }}
+                <div class="game">
+                    <div class="score" style="background-color:{{ .Color }}">{{ .Score }}</div>
+                    <div class="result">
+                        <img src="{{ .HomeTeamPicture }}"/>
+                        <h4>vs</h4>
+                        <img src="{{ .AwayTeamPicture }}"/>
+                        <h4>{{ .HomeTeamScore }}</h4>
+                        <h4>-</h4>
+                        <h4>{{ .AwayTeamScore }}</h4>
+                    </div>
+                    <div class="categories">
+                        {{ range .Categories }}
+                            <div class="category">
+                                <div class="score" style="background-color:{{ .Color }}">{{ printf "%.1f" .Score }}</div>
+                                <div class="name">{{ .Name }}</div>
+                            </div>
+                        {{ end }}
+                    </div>
+                    <div class="gameweek">GW{{ .Gameweek }}</div>
+                </div>
+            {{ else }}
+                <div class="game abs">
+                    <div class="score" style="background-color:black">ABS</div>
+                    <div class="result">
+                        <img src="{{ .HomeTeamPicture }}"/>
+                        <h4>vs</h4>
+                        <img src="{{ .AwayTeamPicture }}"/>
+                        <h4>{{ .HomeTeamScore }}</h4>
+                        <h4>-</h4>
+                        <h4>{{ .AwayTeamScore }}</h4>
+                    </div>
+                    <div class="gameweek">GW{{ .Gameweek }}</div>
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+{{ end }}

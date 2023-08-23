@@ -1,0 +1,5 @@
+<ul>
+    {{ range . }}
+        <li hx-get="/player-infos/{{ .Slug }}" hx-trigger="click" hx-target="#player-infos" hx-indicator=".htmx-indicator">{{ .DisplayName }}</li>
+    {{ end }}
+</ul>
